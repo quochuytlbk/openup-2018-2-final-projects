@@ -1,0 +1,599 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat';
+  background: url(../images/background.jpg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  a {
+    text-decoration: none;
+  }
+}
+.grid {
+  margin: 0 auto;
+  height: calc(100vw / (16 / 9));
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  .span-left {
+    grid-column: span 3 / auto;
+    .profile {
+      margin: 0 auto;
+      width: 90%;
+      height: 15%;
+      display: grid;
+      grid-template-columns: 30% 70%;
+      
+      .avatarZone {
+        height: 100%;
+        background: url('../images/frame-avatar-crop.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+      .infoZone {
+        height: 100%;
+        padding-top: 2vw;
+        h3 {  
+          font-size: 1.8vw;
+          margin: 0.3vw auto;
+        }
+        .profile {
+          width: 100%;
+          display: table;
+          
+          h5 {
+            font-size: 1.3vw;
+            display: table-cell;
+            vertical-align: middle;
+          }
+          em {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 1.3vw;
+          }
+        }
+      }
+    } 
+    .social {
+      margin-top: 9.8%;
+      height: calc(100vw / 2.22);
+      .sidebar {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(200, 201, 176, 0.411);
+        .titleSidebar {
+          height: 6%;
+          background: rgb(233, 233, 233);
+          display: grid;
+          grid-template-columns: 90% 10%;
+          h2 {
+            text-align: center;
+            font-size: 1.5vw;
+            margin: 2%;
+          }
+          img {
+            margin: 0.5vh;
+            width: 80%;
+            cursor: pointer;
+          }
+        }
+        .messages {
+          overflow-y: auto;
+          overflow-x: hidden;  
+          background-color: rgba(235, 235, 235, 0.699);
+          height: 88.8%;
+          p {
+            font-size: 1vw;
+          }
+        }
+        .messagesInput {
+          height: 6%;
+          width: 100%;
+          background-color: rgba(180, 180, 180, 0.733);
+          display: grid;
+          grid-template-columns: 80% 20%;  
+          .messageType {
+            font-size: 1.5vw;
+            padding: 0;
+            padding-left: 5%; 
+            border: none;
+            outline: none;
+            background: none;
+          }
+          .messageSend {
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: 1.2vw;
+            padding: 0;
+            background-color: rgba(149, 164, 255, 0.733);
+            border: none;
+            cursor: pointer;
+          }
+        }
+      }
+      .open-btn {
+        width: 10%;
+        img {
+          width: 100%;
+          cursor: pointer;
+        }
+      }
+    }  
+  }
+  .span-right {
+    grid-column: span 9 / auto;
+    width: 100%;
+    background: url(../images/game-board.png);
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .gameBoard {
+      margin: 10% 3%;
+      height: 72%;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      host-zone {
+        grid-column: span 4 / auto;
+        .hostBtn {
+          width: 50%;
+          margin: 30% auto 0%;
+          cursor: pointer;
+          h2 {
+            position: absolute;
+            margin: 0.8% 3.4%;
+            font-size: 2vw;
+          }
+          img {
+            width: 100%;
+          }
+        }
+        .hostRoom {
+          width: 80%;
+          margin: 50% auto;
+          text-align: center;
+          h6 {
+            font-size: 1vw;
+            margin: 0;
+          }
+          .board {
+            width: 60%;
+            img {
+              width: 100%;
+            }
+          }
+          .leaveBtn {
+            margin: -7% auto;
+            width: 65%;
+            cursor: pointer;
+            h2 {
+              position: absolute;
+              font-size: 1.5vw;
+              padding: 0% 1.3%;
+            }
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .joinZone {
+        grid-column: span 8 / auto;
+        text-align: center;
+        h1 {
+          font-size: 3vw;
+          margin: 2%;
+        }
+        .joinRooms {
+          height: 70%;
+          room-list{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            .roomZone {
+              margin-top: 20%; 
+              grid-column: span 1 / auto;
+              .userInfo {
+                margin: 0 auto;
+                width: 65%;
+                h5 {
+                  font-size: 1.3vw;
+                  float: left;
+                  margin: 0;
+                }
+                em {
+                  font-size: 1.1vw; 
+                  float: right;
+                  margin: 0;
+                }
+                img {
+                  width: 100%;
+                }
+              }
+              .joinBtn{
+                width: 60%;
+                margin: -1vw auto;
+                cursor: pointer;
+                h2 {
+                  margin: 0;
+                  position: absolute;
+                  font-size: 1.3vw;
+                  padding: .7% 3.3%;
+                }
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    game-play {
+      position: absolute;
+      margin-top: 7.9vw;
+      margin-left: 2.5vw;
+      width: 70vw;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      .gameProfile {
+        grid-column: span 3 / auto;
+        .hostChat {
+          position: absolute;
+          top: -6vw;
+          left: 11vw;
+          background: url('../images/hostConversation.svg');
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          opacity: 0.9;
+          text-align: center;
+
+          h4 {
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 1vw;
+            font-size: 1.6vw;
+            color: rgb(22, 22, 22)
+          }
+        }
+        .hostSeat {
+          color: #BA0000;
+          height: 17vw; 
+          .avatarHost {
+            margin: 0.5vw auto;
+            height: 6vw;
+            background: url('../images/frame-avatar-crop.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+          }
+          .hostName {
+            margin: 0.2vw auto;
+            text-align: center;
+            h3 {
+              margin: 0;
+              font-size: 1.5vw;
+            }
+          }
+          .profileHost {
+            width: 80%;
+            margin: 0.5vw auto;
+            display: table;
+            
+            h5 {
+              font-size: 1vw;
+              display: table-cell;
+              vertical-align: middle;
+              margin: 0;
+            }
+            em {
+              display: table-cell;
+              vertical-align: middle;
+              font-size: 1vw;
+            }
+          }
+          .signO {
+            height: 6vw;
+            background: url('../images/o.png');
+            opacity: 0.5;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+          }
+        }
+        .clock {
+          text-align: center;
+          font-size: 1.5vw;
+        }
+        .joinSeat {
+          color: #2c9400;
+          height: 18vw;
+          .signX {
+            height: 6vw;
+            background: url('../images/x.png');
+            opacity: 0.5;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+          }
+          .profileJoin {
+            width: 80%;
+            margin: 0.5vw auto;
+            display: table;
+            
+            h5 {
+              font-size: 1vw;
+              display: table-cell;
+              vertical-align: middle;
+              margin: 0;
+            }
+            em {
+              display: table-cell;
+              vertical-align: middle;
+              font-size: 1vw;
+            }
+          }
+          .joinName {
+            margin: 0.2vw auto;
+            text-align: center;
+            h3 {
+              margin: 0;
+              font-size: 1.5vw;
+            }
+          }
+          .avatarJoin {
+            margin: 0.8vw auto;
+            height: 6vw;
+            background: url('../images/frame-avatar-crop.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+          }
+          .joinChat {
+            position: absolute;
+            top: 39vw;
+            left: 11vw;
+            background: url('../images/joinConversation.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            opacity: 0.9;
+            text-align: center;
+
+            h4 {
+              font-family: Arial, Helvetica, sans-serif;
+              padding-left: 1vw;
+              font-size: 1.6vw;
+              color: rgb(22, 22, 22)
+            }
+          }
+        }
+      }
+      .cardBoard {
+        grid-column: span 7 / auto;
+        .notiGame {
+          position: absolute;
+        }
+        .notiDraw {
+          position: absolute;
+          left: 25vw;
+          top: 5vw;
+          background: url('../images/draw.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          padding: 1vw;
+          display: none;  
+        
+          h3 {
+            font-size: 1.5vw;
+            display: inline;
+          }
+          .chooseYNDraw {
+            width: 40%;
+            margin: 0 auto;
+            img {
+              cursor: pointer;
+              width: 2vw;
+              margin: 0 1vw;
+            }
+          }
+        }
+        .gridBoard {
+          height: 40vw;
+          width: 40vw;
+          display: grid;
+          border: rgb(51, 51, 51) 0.05vw solid;
+          background-color: rgba(255, 255, 255, 0.37);
+          grid-template-columns: repeat(15, 1fr);
+          grid-template-rows: repeat(15, 1fr);
+          .box {
+            border: rgb(51, 51, 51) 0.05vw solid;
+            cursor: pointer;
+          }
+        }
+      }
+      .options {
+        grid-column: span 2 / auto;
+        
+        .drawGame {
+          width: 90%;
+          margin: 10% auto;
+          cursor: pointer;
+          h2 {
+            margin: 0;
+            position: absolute;
+            font-size: 1.2vw;
+            padding: 1vw;
+          }
+          img{
+            width: 100%;
+          }
+        }
+        .submission {
+          width: 90%;
+          margin: 10% auto;
+          cursor: pointer;
+          h2 {
+            margin: 0;
+            position: absolute;
+            font-size: 1.4vw;
+            padding: 1vw;
+          }
+          img{
+            width: 100%;
+          }
+        }
+        .confirmSubmission {
+          position: absolute;
+          left: 60vw;
+          top: 10vw;
+          h5 {
+            font-size: 1.1vw;
+            margin: 0;
+          }
+          .chooseYN {
+            
+            img {
+              cursor: pointer;
+              width: 2vw;
+              margin: 1vw;
+            }
+          }
+        }
+        .quickChat {
+          width: 90%;
+          margin: 220% auto;
+          margin-bottom: 0%;
+          cursor: pointer;
+          h2 {
+            margin: 0;
+            position: absolute;
+            font-size: 1.4vw;
+            padding: 1vw;
+          }
+          img{
+            width: 100%;
+          }
+        }
+        .chatSample {
+          position: absolute;
+          top: 9vw;
+          left: 28vw;
+          width: 40vw;
+          height: 27vw;
+          background: url('../images/Chat.svg');
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          opacity: 0.9;
+          padding-top: 1vw;
+          
+          img {
+            position: absolute;
+            cursor: pointer;
+            width: 2vw;
+            top: -0.5vw;
+            left: -1vw;
+          }
+          .chatBoxs {
+            width: 100%;
+            height: 92%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            text-align: center;
+            .boxSample {
+              cursor: pointer;
+              width: 90%;
+              height: 80%;
+              margin: 0 auto;
+              grid-column: span 1 / auto;
+              border: 1px white solid;
+              border-radius: 1vw;
+              align-items: center;
+              align-content: center;
+
+              p{
+                font-family: Arial, Helvetica, sans-serif;
+                color: white;
+                font-size: 1.4vw;
+                font-weight: 700;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+// Add Class
+.x {
+  background: url('../images/x.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.xSign:hover {
+  background: url('../images/x.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.4;
+}
+.o {
+  background: url('../images/o.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.oSign:hover{
+  background: url('../images/o.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.4;
+}
+.disabled {
+  pointer-events: none;
+}
+
+.notiCongrats {
+  height: 40vw;
+  width: 40vw;
+  background: url('../images/congrats.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.notiLose {
+  height: 40vw;
+  width: 40vw;
+  background: url('../images/lose.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.notiDrawGame {
+  height: 40vw;
+  width: 40vw;
+  background: url('../images/draw.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.7;
+}
+.notiDrawShow {
+  display: block !important;
+}
+.boxChatSample {
+  width: 20vw;
+  height: 7vw;
+}

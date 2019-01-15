@@ -1,0 +1,41 @@
+doctype html
+html(lang="en" ng-app="index")
+  head
+    title Caro Game
+    link(rel="stylesheet", href="/stylesheets/index.css")
+  body(ng-controller="IndexController as index")
+    .grid
+      .span-left
+        .profile(ng-controller="ProfileController as profile")
+          .avatarZone
+            
+          .infoZone
+            h3 {{user.username}}
+            .profile
+              h5 Win Rate: {{user.winRate | number : 0}}%
+              em Lv.{{user.level}}
+        .social(ng-controller="SocialController as social")
+          .sidebar(ng-show="social.sidebar")
+            .titleSidebar
+              h2 Chat Box
+              img(src="../images/close.png", alt="" ng-click="social.hideSideBar()")
+            .messages#messagesZone
+              p(ng-repeat="chatMessage in social.chatMessages")
+                message-line
+            form.messagesInput(ng-submit="social.chat()")
+              input.messageType(placeholder="Type here" type="text" ng-model="social.message")
+              input.messageSend(type="submit" value="Send")
+          .open-btn(ng-hide="social.sidebar")
+            img(src="../images/open.png" ng-click="social.showSideBar()")    
+      .span-right(ng-controller="GameController as game")
+        game-play(ng-show="game.isDisplayGamePlay")
+        .gameBoard
+          host-zone
+          .joinZone(ng-show="game.isDisplayJoinZone")
+            h1 Join Room
+            .joinRooms
+              room-list
+    script(src="../socket.io/socket.io.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js")
+    script(src="/javascripts/index.js")
+    script(src="/javascripts/pure.js")

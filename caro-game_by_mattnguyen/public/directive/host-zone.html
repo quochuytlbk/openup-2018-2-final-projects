@@ -1,0 +1,12 @@
+<div class="hostBtn" ng-click="game.host()" ng-show="game.isDisplayHostBtn">
+  <h2>Host</h2>
+  <img src="../images/boardbtn.png" alt="">
+</div>
+<div class="hostRoom" ng-show="game.isDisplayHost">
+  <h6>Waiting for another player ...</h6>
+  <img src="../images/board-display.png" alt="" class="board">
+  <div class="leaveBtn" ng-click="game.leave()">
+    <h2>Leave Room</h2>
+    <img src="../images/boardbtn.png" alt="">
+  </div>
+</div>

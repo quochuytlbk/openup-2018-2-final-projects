@@ -1,0 +1,11 @@
+<div class="roomZone" ng-repeat="caroRoom in game.caroRooms">
+  <div class="userInfo">
+    <h5>{{caroRoom.username}}</h5>
+    <em>Lv.{{caroRoom.level}}</em>
+    <img src="../images/board-display.png" alt="">  
+  </div>
+  <div class="joinBtn" ng-click="game.join(caroRoom._id)">
+    <h2>Join</h2>
+    <img src="../images/boardbtn.png" alt="">
+  </div>
+</div>
