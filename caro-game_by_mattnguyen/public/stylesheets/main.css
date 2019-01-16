@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+.grid .login-form .userBox, .grid .login-form .psdBox, .grid .login-form .login-btn, .grid .login-form .register-btn {
+  width: 85%;
+  font-size: 1.5em;
+  margin: 20px auto;
+  border-radius: 4px;
+}
+
+.grid .login-form .userBox input, .grid .login-form .psdBox input, .grid .login-form .login-btn input, .grid .login-form .register-btn input {
+  width: 80%;
+  font-size: 0.6em;
+  font-family: 'Montserrat';
+  background: none;
+  border: none;
+  outline: none;
+  margin: 0px 0px 5px 0px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+  height: 100%;
+}
+
+html a, body a {
+  text-decoration: none;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  height: 100%;
+}
+
+.grid .bg {
+  grid-column: span 9 / auto;
+}
+
+.grid .bg .bg-img {
+  height: 100%;
+  width: 100%;
+  background: url(../images/background1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.grid .login-form {
+  grid-column: span 3 / auto;
+  background-color: white;
+  text-align: center;
+}
+
+.grid .login-form .form-title {
+  display: -ms-grid;
+  display: grid;
+  font-size: 0.7em;
+  width: 80%;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.grid .login-form .form-title img {
+  width: 100px;
+}
+
+.grid .login-form .form-title p {
+  font-weight: 700;
+  font-size: 2em;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.grid .login-form .userBox {
+  border: 1px #D5D5D5 solid;
+  -webkit-box-shadow: 1.5px 1.5px 0 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 1.5px 1.5px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.grid .login-form .psdBox {
+  border: 1px #D5D5D5 solid;
+  -webkit-box-shadow: 1.5px 1.5px 0 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 1.5px 1.5px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.grid .login-form .login-issues {
+  display: -ms-grid;
+  display: grid;
+  font-size: 0.7em;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+.grid .login-form .login-issues .check-login input {
+  cursor: pointer;
+  margin: 0;
+}
+
+.grid .login-form .login-issues .check-login::after {
+  content: "Remember me";
+}
+
+.grid .login-form .login-issues a {
+  color: black;
+}
+
+.grid .login-form .login-btn {
+  cursor: pointer;
+  background-color: #0B90D5;
+  -webkit-box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.grid .login-form .login-btn input {
+  cursor: pointer;
+  width: 95%;
+  font-weight: 700;
+  font-size: 0.75em;
+  color: white;
+}
+
+.grid .login-form .register-btn {
+  cursor: pointer;
+  background-color: #99D50B;
+  -webkit-box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.grid .login-form .register-btn input {
+  cursor: pointer;
+  width: 95%;
+  font-size: 0.75em;
+  font-weight: 700;
+  color: white;
+}
+
+.grid .login-form .social img {
+  cursor: pointer;
+  width: 20px;
+  margin: 5px;
+}
+
+.grid .login-form .social::before {
+  content: "or Sign in using";
+  display: block;
+  font-size: 0.7em;
+}
+
+@media (max-width: 950px) {
+  .grid .bg {
+    grid-column: span 8 / auto;
+  }
+  .grid .login-form {
+    margin-top: 20%;
+    grid-column: span 4 / auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid .bg {
+    display: none;
+  }
+  .grid .login-form {
+    margin-top: 30%;
+    grid-column: span 12 / auto;
+  }
+}
+/*# sourceMappingURL=main.css.map */

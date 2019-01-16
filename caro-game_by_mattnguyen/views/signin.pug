@@ -1,0 +1,36 @@
+doctype html
+html(lang='en' ng-app='sign-in')
+  head
+    title Sign in 
+    link(rel='stylesheet', href='/stylesheets/main.css')
+  body(ng-controller='SignInController as signIn')
+    .grid
+      .bg
+        .bg-img
+      .login-form
+        form(novalidate='', ng-submit='signIn.loginData()')
+          .form-title
+            div
+              img.logo(src='/images/logo.svg', alt='')
+            div
+              p Sign in
+          |         {{signIn.noti}}     
+          .userBox
+            input(type='text', placeholder='username or email' ng-model='signIn.formData.user') 
+          .psdBox
+            input(type='password', placeholder='password' ng-model='signIn.formData.psd')
+          .login-issues
+            .check-login
+              input(type='checkbox')
+            .forget-psd
+              a(href='#') Forgot password!
+          .login-btn
+            input(type='submit', value='Login Game')
+          .register-btn
+            a(href='/games/signup')
+              input(type='button', value='Sign up now')
+          .social
+            img(src='/images/google.svg', alt='')
+            img(src='/images/facebook.svg', alt='')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js')
+    script(src='/javascripts/sign-in.js')        

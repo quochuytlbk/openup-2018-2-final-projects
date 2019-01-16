@@ -1,0 +1,5 @@
+{
+  "jwtPrivateKey": "carogame_jwtPrivateKey",
+  "session": "carogame_sessionKey",
+  "db":"carogame_db"
+}

@@ -1,0 +1,707 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat';
+  background: url(../images/background.jpg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html a, body a {
+  text-decoration: none;
+}
+
+.grid {
+  margin: 0 auto;
+  height: calc(100vw / (16 / 9));
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+}
+
+.grid .span-left {
+  grid-column: span 3 / auto;
+}
+
+.grid .span-left .profile {
+  margin: 0 auto;
+  width: 90%;
+  height: 15%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 70%;
+      grid-template-columns: 30% 70%;
+}
+
+.grid .span-left .profile .avatarZone {
+  height: 100%;
+  background: url("../images/frame-avatar-crop.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.grid .span-left .profile .infoZone {
+  height: 100%;
+  padding-top: 2vw;
+}
+
+.grid .span-left .profile .infoZone h3 {
+  font-size: 1.8vw;
+  margin: 0.3vw auto;
+}
+
+.grid .span-left .profile .infoZone .profile {
+  width: 100%;
+  display: table;
+}
+
+.grid .span-left .profile .infoZone .profile h5 {
+  font-size: 1.3vw;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.grid .span-left .profile .infoZone .profile em {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 1.3vw;
+}
+
+.grid .span-left .social {
+  margin-top: 9.8%;
+  height: calc(100vw / 2.22);
+}
+
+.grid .span-left .social .sidebar {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(200, 201, 176, 0.411);
+}
+
+.grid .span-left .social .sidebar .titleSidebar {
+  height: 6%;
+  background: #e9e9e9;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 90% 10%;
+      grid-template-columns: 90% 10%;
+}
+
+.grid .span-left .social .sidebar .titleSidebar h2 {
+  text-align: center;
+  font-size: 1.5vw;
+  margin: 2%;
+}
+
+.grid .span-left .social .sidebar .titleSidebar img {
+  margin: 0.5vh;
+  width: 80%;
+  cursor: pointer;
+}
+
+.grid .span-left .social .sidebar .messages {
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: rgba(235, 235, 235, 0.699);
+  height: 88.8%;
+}
+
+.grid .span-left .social .sidebar .messages p {
+  font-size: 1vw;
+}
+
+.grid .span-left .social .sidebar .messagesInput {
+  height: 6%;
+  width: 100%;
+  background-color: rgba(180, 180, 180, 0.733);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80% 20%;
+      grid-template-columns: 80% 20%;
+}
+
+.grid .span-left .social .sidebar .messagesInput .messageType {
+  font-size: 1.5vw;
+  padding: 0;
+  padding-left: 5%;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.grid .span-left .social .sidebar .messagesInput .messageSend {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 1.2vw;
+  padding: 0;
+  background-color: rgba(149, 164, 255, 0.733);
+  border: none;
+  cursor: pointer;
+}
+
+.grid .span-left .social .open-btn {
+  width: 10%;
+}
+
+.grid .span-left .social .open-btn img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.grid .span-right {
+  grid-column: span 9 / auto;
+  width: 100%;
+  background: url(../images/game-board.png);
+  opacity: 0.9;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.grid .span-right .gameBoard {
+  margin: 10% 3%;
+  height: 72%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+}
+
+.grid .span-right .gameBoard host-zone {
+  grid-column: span 4 / auto;
+}
+
+.grid .span-right .gameBoard host-zone .hostBtn {
+  width: 50%;
+  margin: 30% auto 0%;
+  cursor: pointer;
+}
+
+.grid .span-right .gameBoard host-zone .hostBtn h2 {
+  position: absolute;
+  margin: 0.8% 3.4%;
+  font-size: 2vw;
+}
+
+.grid .span-right .gameBoard host-zone .hostBtn img {
+  width: 100%;
+}
+
+.grid .span-right .gameBoard host-zone .hostRoom {
+  width: 80%;
+  margin: 50% auto;
+  text-align: center;
+}
+
+.grid .span-right .gameBoard host-zone .hostRoom h6 {
+  font-size: 1vw;
+  margin: 0;
+}
+
+.grid .span-right .gameBoard host-zone .hostRoom .board {
+  width: 60%;
+}
+
+.grid .span-right .gameBoard host-zone .hostRoom .board img {
+  width: 100%;
+}
+
+.grid .span-right .gameBoard host-zone .hostRoom .leaveBtn {
+  margin: -7% auto;
+  width: 65%;
+  cursor: pointer;
+}
+
+.grid .span-right .gameBoard host-zone .hostRoom .leaveBtn h2 {
+  position: absolute;
+  font-size: 1.5vw;
+  padding: 0% 1.3%;
+}
+
+.grid .span-right .gameBoard host-zone .hostRoom .leaveBtn img {
+  width: 100%;
+}
+
+.grid .span-right .gameBoard .joinZone {
+  grid-column: span 8 / auto;
+  text-align: center;
+}
+
+.grid .span-right .gameBoard .joinZone h1 {
+  font-size: 3vw;
+  margin: 2%;
+}
+
+.grid .span-right .gameBoard .joinZone .joinRooms {
+  height: 70%;
+}
+
+.grid .span-right .gameBoard .joinZone .joinRooms room-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.grid .span-right .gameBoard .joinZone .joinRooms room-list .roomZone {
+  margin-top: 20%;
+  grid-column: span 1 / auto;
+}
+
+.grid .span-right .gameBoard .joinZone .joinRooms room-list .roomZone .userInfo {
+  margin: 0 auto;
+  width: 65%;
+}
+
+.grid .span-right .gameBoard .joinZone .joinRooms room-list .roomZone .userInfo h5 {
+  font-size: 1.3vw;
+  float: left;
+  margin: 0;
+}
+
+.grid .span-right .gameBoard .joinZone .joinRooms room-list .roomZone .userInfo em {
+  font-size: 1.1vw;
+  float: right;
+  margin: 0;
+}
+
+.grid .span-right .gameBoard .joinZone .joinRooms room-list .roomZone .userInfo img {
+  width: 100%;
+}
+
+.grid .span-right .gameBoard .joinZone .joinRooms room-list .roomZone .joinBtn {
+  width: 60%;
+  margin: -1vw auto;
+  cursor: pointer;
+}
+
+.grid .span-right .gameBoard .joinZone .joinRooms room-list .roomZone .joinBtn h2 {
+  margin: 0;
+  position: absolute;
+  font-size: 1.3vw;
+  padding: .7% 3.3%;
+}
+
+.grid .span-right .gameBoard .joinZone .joinRooms room-list .roomZone .joinBtn img {
+  width: 100%;
+}
+
+.grid .span-right game-play {
+  position: absolute;
+  margin-top: 7.9vw;
+  margin-left: 2.5vw;
+  width: 70vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+}
+
+.grid .span-right game-play .gameProfile {
+  grid-column: span 3 / auto;
+}
+
+.grid .span-right game-play .gameProfile .hostChat {
+  position: absolute;
+  top: -6vw;
+  left: 11vw;
+  background: url("../images/hostConversation.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.grid .span-right game-play .gameProfile .hostChat h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 1vw;
+  font-size: 1.6vw;
+  color: #161616;
+}
+
+.grid .span-right game-play .gameProfile .hostSeat {
+  color: #BA0000;
+  height: 17vw;
+}
+
+.grid .span-right game-play .gameProfile .hostSeat .avatarHost {
+  margin: 0.5vw auto;
+  height: 6vw;
+  background: url("../images/frame-avatar-crop.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.grid .span-right game-play .gameProfile .hostSeat .hostName {
+  margin: 0.2vw auto;
+  text-align: center;
+}
+
+.grid .span-right game-play .gameProfile .hostSeat .hostName h3 {
+  margin: 0;
+  font-size: 1.5vw;
+}
+
+.grid .span-right game-play .gameProfile .hostSeat .profileHost {
+  width: 80%;
+  margin: 0.5vw auto;
+  display: table;
+}
+
+.grid .span-right game-play .gameProfile .hostSeat .profileHost h5 {
+  font-size: 1vw;
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.grid .span-right game-play .gameProfile .hostSeat .profileHost em {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 1vw;
+}
+
+.grid .span-right game-play .gameProfile .hostSeat .signO {
+  height: 6vw;
+  background: url("../images/o.png");
+  opacity: 0.5;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.grid .span-right game-play .gameProfile .clock {
+  text-align: center;
+  font-size: 1.5vw;
+}
+
+.grid .span-right game-play .gameProfile .joinSeat {
+  color: #2c9400;
+  height: 18vw;
+}
+
+.grid .span-right game-play .gameProfile .joinSeat .signX {
+  height: 6vw;
+  background: url("../images/x.png");
+  opacity: 0.5;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.grid .span-right game-play .gameProfile .joinSeat .profileJoin {
+  width: 80%;
+  margin: 0.5vw auto;
+  display: table;
+}
+
+.grid .span-right game-play .gameProfile .joinSeat .profileJoin h5 {
+  font-size: 1vw;
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.grid .span-right game-play .gameProfile .joinSeat .profileJoin em {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 1vw;
+}
+
+.grid .span-right game-play .gameProfile .joinSeat .joinName {
+  margin: 0.2vw auto;
+  text-align: center;
+}
+
+.grid .span-right game-play .gameProfile .joinSeat .joinName h3 {
+  margin: 0;
+  font-size: 1.5vw;
+}
+
+.grid .span-right game-play .gameProfile .joinSeat .avatarJoin {
+  margin: 0.8vw auto;
+  height: 6vw;
+  background: url("../images/frame-avatar-crop.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.grid .span-right game-play .gameProfile .joinSeat .joinChat {
+  position: absolute;
+  top: 39vw;
+  left: 11vw;
+  background: url("../images/joinConversation.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.grid .span-right game-play .gameProfile .joinSeat .joinChat h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 1vw;
+  font-size: 1.6vw;
+  color: #161616;
+}
+
+.grid .span-right game-play .cardBoard {
+  grid-column: span 7 / auto;
+}
+
+.grid .span-right game-play .cardBoard .notiGame {
+  position: absolute;
+}
+
+.grid .span-right game-play .cardBoard .notiDraw {
+  position: absolute;
+  left: 25vw;
+  top: 5vw;
+  background: url("../images/draw.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 1vw;
+  display: none;
+}
+
+.grid .span-right game-play .cardBoard .notiDraw h3 {
+  font-size: 1.5vw;
+  display: inline;
+}
+
+.grid .span-right game-play .cardBoard .notiDraw .chooseYNDraw {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.grid .span-right game-play .cardBoard .notiDraw .chooseYNDraw img {
+  cursor: pointer;
+  width: 2vw;
+  margin: 0 1vw;
+}
+
+.grid .span-right game-play .cardBoard .gridBoard {
+  height: 40vw;
+  width: 40vw;
+  display: -ms-grid;
+  display: grid;
+  border: #333333 0.05vw solid;
+  background-color: rgba(255, 255, 255, 0.37);
+  -ms-grid-columns: (1fr)[15];
+      grid-template-columns: repeat(15, 1fr);
+  -ms-grid-rows: (1fr)[15];
+      grid-template-rows: repeat(15, 1fr);
+}
+
+.grid .span-right game-play .cardBoard .gridBoard .box {
+  border: #333333 0.05vw solid;
+  cursor: pointer;
+}
+
+.grid .span-right game-play .options {
+  grid-column: span 2 / auto;
+}
+
+.grid .span-right game-play .options .drawGame {
+  width: 90%;
+  margin: 10% auto;
+  cursor: pointer;
+}
+
+.grid .span-right game-play .options .drawGame h2 {
+  margin: 0;
+  position: absolute;
+  font-size: 1.2vw;
+  padding: 1vw;
+}
+
+.grid .span-right game-play .options .drawGame img {
+  width: 100%;
+}
+
+.grid .span-right game-play .options .submission {
+  width: 90%;
+  margin: 10% auto;
+  cursor: pointer;
+}
+
+.grid .span-right game-play .options .submission h2 {
+  margin: 0;
+  position: absolute;
+  font-size: 1.4vw;
+  padding: 1vw;
+}
+
+.grid .span-right game-play .options .submission img {
+  width: 100%;
+}
+
+.grid .span-right game-play .options .confirmSubmission {
+  position: absolute;
+  left: 60vw;
+  top: 10vw;
+}
+
+.grid .span-right game-play .options .confirmSubmission h5 {
+  font-size: 1.1vw;
+  margin: 0;
+}
+
+.grid .span-right game-play .options .confirmSubmission .chooseYN img {
+  cursor: pointer;
+  width: 2vw;
+  margin: 1vw;
+}
+
+.grid .span-right game-play .options .quickChat {
+  width: 90%;
+  margin: 220% auto;
+  margin-bottom: 0%;
+  cursor: pointer;
+}
+
+.grid .span-right game-play .options .quickChat h2 {
+  margin: 0;
+  position: absolute;
+  font-size: 1.4vw;
+  padding: 1vw;
+}
+
+.grid .span-right game-play .options .quickChat img {
+  width: 100%;
+}
+
+.grid .span-right game-play .options .chatSample {
+  position: absolute;
+  top: 9vw;
+  left: 28vw;
+  width: 40vw;
+  height: 27vw;
+  background: url("../images/Chat.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.9;
+  padding-top: 1vw;
+}
+
+.grid .span-right game-play .options .chatSample img {
+  position: absolute;
+  cursor: pointer;
+  width: 2vw;
+  top: -0.5vw;
+  left: -1vw;
+}
+
+.grid .span-right game-play .options .chatSample .chatBoxs {
+  width: 100%;
+  height: 92%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+  text-align: center;
+}
+
+.grid .span-right game-play .options .chatSample .chatBoxs .boxSample {
+  cursor: pointer;
+  width: 90%;
+  height: 80%;
+  margin: 0 auto;
+  grid-column: span 1 / auto;
+  border: 1px white solid;
+  border-radius: 1vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.grid .span-right game-play .options .chatSample .chatBoxs .boxSample p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 1.4vw;
+  font-weight: 700;
+}
+
+.x {
+  background: url("../images/x.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.xSign:hover {
+  background: url("../images/x.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.4;
+}
+
+.o {
+  background: url("../images/o.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.oSign:hover {
+  background: url("../images/o.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.4;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.notiCongrats {
+  height: 40vw;
+  width: 40vw;
+  background: url("../images/congrats.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.notiLose {
+  height: 40vw;
+  width: 40vw;
+  background: url("../images/lose.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.notiDrawGame {
+  height: 40vw;
+  width: 40vw;
+  background: url("../images/draw.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.7;
+}
+
+.notiDrawShow {
+  display: block !important;
+}
+
+.boxChatSample {
+  width: 20vw;
+  height: 7vw;
+}
+/*# sourceMappingURL=index.css.map */

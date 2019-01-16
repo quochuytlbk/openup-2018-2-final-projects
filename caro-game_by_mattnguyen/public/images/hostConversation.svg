@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 443 148">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.95;
+      }
+
+      .cls-2 {
+        fill: #ffcbcb;
+      }
+    </style>
+  </defs>
+  <g id="hostConversation" class="cls-1" transform="translate(-724 -32)">
+    <rect id="Rectangle_5" data-name="Rectangle 5" class="cls-2" width="413" height="121" rx="36" transform="translate(754 32)"/>
+    <path id="Path_1" data-name="Path 1" class="cls-2" d="M2748,118l-34,62,70-32Z" transform="translate(-1990)"/>
+  </g>
+</svg>

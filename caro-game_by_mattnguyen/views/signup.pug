@@ -1,0 +1,36 @@
+doctype html
+html(lang='en', ng-app='sign-up')
+  head
+    title Sign up
+    link(rel='stylesheet', href='/stylesheets/main.css')
+  body(ng-controller='SignUpController as signUp')
+    .grid
+      .bg
+        .bg-img
+      .login-form
+        form(novalidate='', ng-submit='signUp.createData()')
+          .form-title
+            div
+              img.logo(src='/images/logo.svg', alt='')
+            div
+              p Sign up
+          |         {{signUp.noti}}    
+          .userBox
+            input(type='text', placeholder='username', ng-model='signUp.formData.username')
+          .userBox
+            input(type='email', placeholder='email', ng-model='signUp.formData.email')
+          .psdBox
+            input(type='password', placeholder='password', ng-model='signUp.formData.psd')
+          .psdBox
+            input(type='password', placeholder='confirm password', ng-model='signUp.formData.cfmPsd')
+          .login-issues
+            div
+            .forget-psd
+              a(href='#') Forgot password!
+          .register-btn
+            input(type='submit', value='Register')
+          .login-btn
+            a(href='/games/signin')
+              input(type='button', value='Login')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js')
+    script(src='/javascripts/sign-up.js')
