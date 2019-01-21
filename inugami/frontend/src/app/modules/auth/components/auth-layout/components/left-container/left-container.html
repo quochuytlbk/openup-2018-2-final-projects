@@ -1,0 +1,16 @@
+<div class="left-container-wolf-background"></div>
+
+<div class="padding-all relative-position" layout="column" layout-align="start center">
+  <img ng-src="{{ $ctrl.logoUrl }}" width="128px" />
+
+  <h1 class="text-on-primary large-letter-spacing md-display-3 no-margin--bottom">{{ $ctrl.title }}</h1>
+
+  <p class="text-on-primary md-body-1 no-margin">{{ $ctrl.subtitle }}</p>
+
+  <md-list class="margin-top--xlarge margin-bottom" layout="column">
+    <md-list-item style="height: 36px" layout layout-margin layout-fill ng-repeat="feature in $ctrl.features">
+      <img ng-src="{{ $ctrl.listIconUrl }}" width="20px" height="20px" />
+      <p class="md-list-item-text text-on-primary md-body-2">{{ feature }}</p>
+    </md-list-item>
+  </md-list>
+</div>

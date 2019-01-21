@@ -1,0 +1,14 @@
+<section>
+  <section-toolbar data="$ctrl.data"></section-toolbar>
+  <div class="full-size grey-background--med padding-top--xsmall padding-left--xsmall" layout="column">
+    <todo-card ng-repeat="toDo in $ctrl.data.toDos" to-do="toDo" flex appbar-data="$ctrl.appbarData"></todo-card>
+    <add-todo
+      class="organize-section__add-todo"
+      layout
+      flex
+      data="$ctrl.data"
+      reload="$ctrl.reload()"
+      ng-if="$ctrl.appbarData.statusFilter !== 'completed'"
+    ></add-todo>
+  </div>
+</section>

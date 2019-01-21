@@ -1,0 +1,68 @@
+<md-card class="padding-all clickable margin-all relative-position" layout="column" flex="50">
+  <div class="full-width text-align--center margin-bottom">
+    <img ng-src="{{ $ctrl.taskBackgroundUrl }}" width="70%" height="auto" />
+  </div>
+
+  <form name="addForm" ng-submit="addForm.$valid && $ctrl.submitAddForm()" layout="column" novalidate>
+    <md-input-container class="md-icon-float md-block height--30px">
+      <label>To-do name</label>
+      <md-icon md-font-set="material-icons">assignment</md-icon>
+      <input ng-model="$ctrl.toDo.name" type="text" name="name" required />
+      <div ng-messages="addForm.name.$error" role="alert">
+        <div ng-message="required">To-do name is required.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-block height--30px" flex>
+      <md-icon md-font-set="material-icons">schedule</md-icon>
+      <input
+        mdc-datetime-picker=""
+        date="true"
+        time="true"
+        type="text"
+        format="MMMM DD, YYYY &acy;t HH:mm"
+        id="datetime"
+        placeholder="Deadline"
+        show-todays-date=""
+        minutes="true"
+        min-date="date"
+        ng-model="$ctrl.toDo.dueDate"
+        class="dtp-no-msclear dtp-input md-input"
+        name="dueDate"
+      />
+    </md-input-container>
+
+    <md-input-container class="height--30px">
+      <label>Category</label>
+      <md-icon md-font-set="material-icons">category</md-icon>
+      <md-select ng-model="$ctrl.toDo.category" name="category" required>
+        <md-option ng-repeat="category in $ctrl.categories" value="{{ category }}">
+          {{ category | capitalizeFirstLetter }}
+        </md-option>
+      </md-select>
+      <div ng-messages="addForm.category.$error" role="alert">
+        <div ng-message="required">To-do category is required.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-input-container--with-hint">
+        <label>Effort</label>
+        <md-icon md-font-set="material-icons">signal_cellular_alt</md-icon>
+        <md-select ng-model="$ctrl.toDo.effort" name="effort">
+          <md-option ng-if="$ctrl.efforts.length === 0" value="">
+            <span class="grey-text">No effort found</span>
+          </md-option>
+          <md-option ng-repeat="effort in $ctrl.efforts" value="{{ effort }}">
+              {{ effort | capitalizeFirstLetter }}
+          </md-option>
+        </md-select>
+    </md-input-container>
+
+    <div layout layout-align="center center">
+      <md-button class="md-raised md-primary" type="submit">Add To-do</md-button>
+      <md-button class="md-primary" type="reset">Reset</md-button>
+    </div>
+  </form>
+
+  <paper-loading ng-if="$ctrl.isLoading"></paper-loading>
+</md-card>

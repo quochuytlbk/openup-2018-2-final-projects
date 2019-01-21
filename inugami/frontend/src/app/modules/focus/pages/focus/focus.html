@@ -1,0 +1,128 @@
+<div class="full-size" ng-if="$ctrl.toDos.length > 0">
+  <div layout="column" class="padding-all--xsmall">
+    <h2 class="no-margin font-weight--400">Have a nice day, {{ $ctrl.userName }}</h2>
+    <h3 class="font-weight--400">You have {{ $ctrl.toDos.length }} focused task(s) left.</h3>
+  </div>
+
+  <div layout layout-align="center start" flex class="full-size">
+    <md-card class="padding-all relative-position no-padding--top" layout="column" flex="70">
+      <div layout layout-align="start center">
+        <md-input-container class="no-margin">
+          <md-tooltip md-direction="top">{{ $ctrl.checkboxTooltip }}</md-tooltip>
+          <md-checkbox
+            aria-label="{{ $ctrl.checkboxTooltip }}"
+            class="no-margin"
+            name="mark"
+            ng-model="$ctrl.selectedToDo.isCompleted"
+            ng-change="$ctrl.toggleCompleted()"
+          ></md-checkbox>
+        </md-input-container>
+        <h2 flex class="font-weight--400">{{ $ctrl.selectedToDo.name }}</h2>
+        <md-button class="md-icon-button no-margin" ui-sref="main.organize.todo({ todoId: $ctrl.selectedToDo._id })">
+          <md-icon md-font-set="material-icons">create</md-icon>
+        </md-button>
+        <md-button
+          class="md-accent size--24px md-icon-button no-padding no-margin--right"
+          ng-click="$ctrl.stopFocusToDo()"
+        >
+          <md-icon
+            md-svg-icon="{{ $ctrl.isLoading ? $ctrl.starIconUrl : $ctrl.yellowStarIconUrl }}"
+            class="size--20px"
+          ></md-icon>
+        </md-button>
+      </div>
+      <md-divider></md-divider>
+      <div layout layout-align="start center" class="margin-top margin-bottom">
+        <md-icon class="no-margin" md-font-set="material-icons">schedule</md-icon>
+        <span class="margin-left--small">{{ $ctrl.formatCountTime($ctrl.selectedToDo.elapsedTime) }}</span>
+        <md-button
+          class="md-primary md-raised margin-left--small"
+          ng-click="$ctrl.toggleCountTime(true)"
+          ng-if="!$ctrl.selectedToDo.isCountingFocusTime"
+          layout
+          layout-align="start center"
+        >
+          <md-icon md-font-set="material-icons">play_arrow</md-icon>
+          <span class="margin-right--xsmall">Start</span>
+        </md-button>
+        <md-button
+          class="md-primary md-raised margin-left--small"
+          ng-click="$ctrl.toggleCountTime(false)"
+          ng-if="$ctrl.selectedToDo.isCountingFocusTime"
+          layout
+          layout-align="start center"
+        >
+          <md-icon md-font-set="material-icons">stop</md-icon>
+          <span class="margin-right--xsmall">Stop</span>
+        </md-button>
+      </div>
+      <md-divider></md-divider>
+      <div layout layout-align="start center" class="margin-top margin-bottom">
+        <md-icon class="no-margin" md-font-set="material-icons">date_range</md-icon>
+        <span class=" margin-left--small" ng-if="$ctrl.selectedToDo.dueDate !== undefined">{{
+          $ctrl.selectedToDo.dueDate | date: 'MMM d'
+        }}</span>
+        <span class=" margin-left--small" ng-if="$ctrl.selectedToDo.dueDate === undefined">No deadline</span>
+      </div>
+      <md-divider></md-divider>
+      <h3>Subtasks</h3>
+      <div
+        class="margin-bottom--small"
+        layout
+        layout-align="start center"
+        ng-repeat="subtask in $ctrl.selectedToDo.subtasks"
+      >
+        <md-input-container class="no-margin">
+          <md-tooltip md-direction="top">
+            {{ subtask.isCompleted ? 'Unmark completed' : 'Mark as completed' }}
+          </md-tooltip>
+          <md-checkbox
+            class="no-margin"
+            name="mark"
+            ng-model="subtask.isCompleted"
+            ng-change="$ctrl.toggleSubtaskCompleted($index)"
+          ></md-checkbox>
+        </md-input-container>
+        <span>{{ subtask.name }}</span>
+      </div>
+      <div ng-if="$ctrl.selectedToDo.subtasks === undefined" class="md-body-1">No subtasks</div>
+
+      <paper-loading ng-if="$ctrl.isLoading"></paper-loading>
+    </md-card>
+
+    <div layout="column" layout-align="start start" flex="30">
+      <md-card
+        ng-repeat="toDo in $ctrl.toDos"
+        class="organize-section__card padding-all--small clickable relative-position full-width"
+        ng-class="$ctrl.isSelected($index) && 'selected'"
+        layout="column"
+      >
+        <div class="full-size absolute-position top--0 left--0" flex ng-click="$ctrl.selectToDo($index)"></div>
+        <div flex layout layout-align="start center">
+          <span flex class="organize-section__text">{{ toDo.name }}</span>
+          <div layout layout-align="start center" ng-if="toDo.dueDate !== undefined">
+            <img ng-src="{{ $ctrl.deadlineIconUrl }}" class="size--16px margin-right--4px" />
+            <span class="font-size--12 grey-text">{{ toDo.dueDate | date: 'MMM d' }}</span>
+          </div>
+          <md-button
+            class="md-accent size--24px md-icon-button no-padding no-margin--right"
+            ng-click="$ctrl.stopFocusToDo($index)"
+          >
+            <md-icon
+              md-svg-icon="{{ $ctrl.isRightLoading[$index] ? $ctrl.starIconUrl : $ctrl.yellowStarIconUrl }}"
+              class="size--16px"
+            ></md-icon>
+          </md-button>
+        </div>
+
+        <paper-loading ng-if="$ctrl.isRightLoading[$index]"></paper-loading>
+      </md-card>
+    </div>
+  </div>
+</div>
+
+<div class="full-size" ng-if="$ctrl.toDos.length === 0" layout="column" layout-align="center center">
+  <img ng-src="{{ $ctrl.wolfBackgroundUrl }}" width="300px" height="auto" class="margin-top" />
+  <h2 class="margin-bottom--xsmall" md-colors="{ color: 'default-primary' }">You don't have any focused to-do.</h2>
+  <span class="md-body-1 action-color">Mark <strong>the star</strong> on any to-do to begin focusing on it.</span>
+</div>

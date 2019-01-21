@@ -1,0 +1,84 @@
+<md-dialog aria-label="To-do Dialog" class="to-do">
+  <dialog-toolbar to-do="toDo" is-loading="isLoading" cancel="cancel()"></dialog-toolbar>
+
+  <form name="editForm" ng-submit="editForm.$valid && submitEditForm()" novalidate>
+    <md-dialog-content>
+      <div class="md-dialog-content" layout="column">
+        <h3 class="no-margin--top">Edit To-do</h3>
+
+        <md-input-container class="md-icon-float md-block height--30px">
+          <label>To-do name</label>
+          <md-icon md-font-set="material-icons">assignment</md-icon>
+          <input ng-model="toDo.name" type="text" name="name" required />
+          <div ng-messages="editForm.name.$error" role="alert">
+            <div ng-message="required">To-do name is required.</div>
+          </div>
+        </md-input-container>
+
+        <div layout>
+          <md-input-container class="md-icon-float md-block height--30px" flex="50">
+            <md-icon md-font-set="material-icons">date_range</md-icon>
+            <input
+              mdc-datetime-picker=""
+              date="true"
+              time="true"
+              type="text"
+              format="MMMM DD, YYYY &#1072;t HH:mm"
+              id="datetime"
+              placeholder="Deadline"
+              show-todays-date=""
+              minutes="true"
+              min-date="date"
+              ng-model="toDo.dueDate"
+              class="dtp-no-msclear dtp-input md-input"
+              name="dueDate"
+            />
+          </md-input-container>
+
+          <md-input-container class="margin-left--small" flex="50">
+            <label>Effort</label>
+            <md-icon md-font-set="material-icons">signal_cellular_alt</md-icon>
+            <md-select ng-model="toDo.effort" name="effort">
+              <md-option ng-repeat="effort in efforts" value="{{ effort }}">
+                {{ effort | capitalizeFirstLetter }}
+              </md-option>
+            </md-select>
+          </md-input-container>
+        </div>
+
+        <md-input-container flex>
+          <label>Category</label>
+          <md-icon md-font-set="material-icons">category</md-icon>
+          <md-select ng-model="toDo.category" name="category" required>
+            <md-option ng-repeat="category in categories" value="{{ category }}">
+              {{ category | capitalizeFirstLetter }}
+            </md-option>
+          </md-select>
+          <div ng-messages="editForm.category.$error" role="alert">
+            <div ng-message="required">To-do category is required.</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Notes</label>
+          <md-icon md-font-set="material-icons">note</md-icon>
+
+          <textarea ng-model="toDo.notes" md-maxlength="150" rows="1" md-select-on-focus></textarea>
+        </md-input-container>
+
+        <md-divider></md-divider>
+
+        <manage-subtasks to-do="toDo"></manage-subtasks>
+
+        <md-divider></md-divider>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions class="margin-bottom" layout="row" layout-align="center center">
+      <md-button class="md-primary md-raised" type="submit">Save To-do</md-button>
+      <md-button class="md-primary" ng-click="cancel()">Cancel</md-button>
+    </md-dialog-actions>
+  </form>
+
+  <paper-loading ng-if="isLoading"></paper-loading>
+</md-dialog>

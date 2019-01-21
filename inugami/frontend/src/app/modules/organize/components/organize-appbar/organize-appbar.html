@@ -1,0 +1,23 @@
+<h3 class="text-on-primary">{{ $ctrl.appbarTitle }}</h3>
+
+<div flex></div>
+
+<md-input-container class="md-block height--35px organize-appbar__search" md-no-float flex>
+  <md-icon md-font-set="material-icons">search</md-icon>
+  <input class="md-body-1" ng-model="$ctrl.appbarData.toDoFilter" ng-change="$ctrl.changeNameFilter()" type="text" name="name" placeholder="Filter to-dos by name..." />
+</md-input-container>
+
+<div flex></div>
+
+<div layout class="toggle-selector">
+  <button class="md-body-2" ng-class="$ctrl.isActiveSelected ? 'selected' : ''" ng-click="$ctrl.selectActiveToDos()">
+    ACTIVE
+  </button>
+  <button
+    class="md-body-2"
+    ng-class="!$ctrl.isActiveSelected ? 'selected' : ''"
+    ng-click="$ctrl.selectCompletedToDos()"
+  >
+    COMPLETED
+  </button>
+</div>

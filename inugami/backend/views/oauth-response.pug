@@ -1,0 +1,12 @@
+html
+  head
+    title='Login with Google'
+  body
+    h1=authToken
+    script.
+      function authenticate() {
+        const authToken = "#{authToken}";
+        window.opener.postMessage({ token: authToken }, 'http://localhost:3000');
+        window.close();
+      };
+      authenticate();

@@ -1,0 +1,8 @@
+<form class="full-width" layout name="quickAddForm" novalidate ng-submit="quickAddForm.$valid && $ctrl.submitAddForm()" >
+  <md-input-container class="no-margin--bottom margin-top--small md-accent" md-no-float flex="95">
+    <input type="text" placeholder="Add to-do..." name="name" ng-model="$ctrl.toDoName" />
+  </md-input-container>
+  <md-button class="md-fab md-mini" md-colors="{ background: 'default-accent' }" type="submit">
+    <md-icon md-font-set="material-icons">add</md-icon>
+  </md-button>
+</form>

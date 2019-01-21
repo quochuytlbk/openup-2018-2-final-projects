@@ -1,0 +1,9 @@
+<img ng-src="{{ $ctrl.logoUrl }}" width="128px" />
+
+<h1 class="large-letter-spacing md-display-3 no-margin--bottom logo-text" md-colors="{ color: 'default-primary' }">
+  {{ $ctrl.logoText }}
+</h1>
+
+<div class="width--80-percent" ui-view="form" is-loading="$ctrl.isLoading" reload="$ctrl.reload()"></div>
+
+<paper-loading ng-if="$ctrl.isLoading"></paper-loading>

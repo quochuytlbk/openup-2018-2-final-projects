@@ -1,0 +1,76 @@
+$on-primary: #ffffff;
+$on-dark: #ffffff;
+$red: #f44336;
+$green: #4caf50;
+$dark-blue: #3f51b5;
+$faded-green: #607d8b;
+$dark: #212121;
+$grey: #757575;
+$med-grey: #e7e7e7;
+$light-grey: #f7f7f7;
+$white: #ffffff;
+$white-faded: #fafafa;
+
+@mixin dark-border-color {
+  border-color: $dark;
+}
+
+.action-color {
+  color: $grey;
+}
+
+.text-on-primary {
+  color: $on-primary;
+}
+
+.text-on-dark {
+  color: $on-dark;
+}
+
+.grey-text {
+  color: $grey;
+}
+
+.dark-background {
+  background: $dark;
+}
+
+.white-background {
+  background: $white;
+}
+
+.white-background--faded {
+  background: $white-faded;
+}
+
+.red-background {
+  background: $red !important;
+}
+
+.green-background {
+  background: $green !important;
+}
+
+.dark-blue-background {
+  background: $dark-blue !important;
+}
+
+.green-background--faded {
+  background: $faded-green !important;
+}
+
+.grey-background--med {
+  background: $med-grey;
+}
+
+@mixin grey-background--med {
+  background: $med-grey;
+}
+
+@mixin grey-background--light {
+  background: $light-grey;
+}
+
+input.hihi::placeholder {
+  color: white !important;
+}

@@ -1,0 +1,25 @@
+@import '../base/color';
+
+md-input-container .md-input,
+md-input-container .md-select-value {
+  @include dark-border-color;
+}
+
+md-input-container:not(.md-input-invalid).md-input-focused.md-accent .md-input {
+  @include dark-border-color;
+}
+
+.md-input-container--with-hint .hint {
+  font-size: 12px;
+  line-height: 14px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  opacity: 1;
+  margin-top: 0;
+  padding-top: 5px;
+  color: grey;
+}
+
+md-checkbox:not(.md-checked).white .md-icon {
+  border-color: rgba(255, 255, 255, 0.8);
+}

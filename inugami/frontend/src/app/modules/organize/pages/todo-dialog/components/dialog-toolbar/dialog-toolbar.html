@@ -1,0 +1,19 @@
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <md-input-container class="no-margin">
+      <md-tooltip md-direction="top">
+        {{ $ctrl.toDo.status === 'completed' ? 'Unmark completed' : 'Mark as completed' }}
+      </md-tooltip>
+      <md-checkbox
+        aria-label="{{ $ctrl.checkboxTooltip }}"
+        class="no-margin"
+        name="mark"
+        ng-model="$ctrl.toDo.isCompleted"
+        ng-change="$ctrl.toggleCompleted()"
+      ></md-checkbox>
+    </md-input-container>
+    <h2>{{ $ctrl.toDo.name }}</h2>
+    <span flex></span>
+    <md-button class="md-icon-button" ng-click="$ctrl.deleteToDo()"> <md-icon md-font-set="material-icons">delete</md-icon> </md-button>
+  </div>
+</md-toolbar>

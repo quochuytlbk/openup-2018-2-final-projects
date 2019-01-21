@@ -1,0 +1,170 @@
+$spacing-unit: 24px;
+
+.padding-all {
+  padding: $spacing-unit;
+}
+
+.padding-all--small {
+  padding: $spacing-unit * 0.5;
+}
+
+.padding-all--large {
+  padding: $spacing-unit * 2;
+}
+
+.padding-all--xsmall {
+  padding: $spacing-unit / 3;
+}
+
+.padding-top {
+  padding-top: $spacing-unit;
+}
+
+.padding-top--xsmall {
+  padding-top: $spacing-unit * 0.25;
+}
+
+.padding-top--small {
+  padding-top: $spacing-unit * 0.5;
+}
+
+.padding-left--xsmall {
+  padding-left: $spacing-unit * 0.25;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-padding--top {
+  padding-top: 0;
+}
+
+.margin-all {
+  margin: $spacing-unit;
+}
+
+.margin-all--small {
+  margin: $spacing-unit * 0.5;
+}
+
+.margin-top {
+  margin-top: $spacing-unit;
+}
+
+.margin-top--xsmall {
+  margin-top: $spacing-unit * 0.25;
+}
+
+.margin-top--small {
+  margin-top: $spacing-unit * 0.5;
+}
+
+.margin-top--large {
+  margin-top: $spacing-unit * 2;
+}
+
+.margin-top--xlarge {
+  margin-top: $spacing-unit * 3;
+}
+
+.margin-top--4px {
+  margin-top: 4px;
+}
+
+.margin-right {
+  margin-right: $spacing-unit;
+}
+
+.margin-right--xsmall {
+  margin-right: $spacing-unit * 0.25;
+}
+
+.margin-right--small {
+  margin-right: $spacing-unit * 0.5;
+}
+
+.margin-right--large {
+  margin-right: $spacing-unit * 2;
+}
+
+.margin-right--xlarge {
+  margin-right: $spacing-unit * 3;
+}
+
+.margin-right--4px {
+  margin-right: 4px;
+}
+
+.margin-bottom--4px {
+  margin-bottom: 4px;
+}
+
+.margin-bottom {
+  margin-bottom: $spacing-unit;
+}
+
+.margin-bottom--xsmall {
+  margin-bottom: $spacing-unit * 0.25;
+}
+
+.margin-bottom--small {
+  margin-bottom: $spacing-unit * 0.5;
+}
+
+.margin-bottom--large {
+  margin-bottom: $spacing-unit * 2;
+}
+
+.margin-bottom--xlarge {
+  margin-bottom: $spacing-unit * 3;
+}
+
+.margin-left {
+  margin-left: $spacing-unit;
+}
+
+.margin-left--xsmall {
+  margin-left: $spacing-unit * 0.25;
+}
+
+.margin-left--small {
+  margin-left: $spacing-unit * 0.5;
+}
+
+.margin-left--mlarge {
+  margin-left: $spacing-unit * 1.5;
+}
+
+.margin-left--large {
+  margin-left: $spacing-unit * 2;
+}
+
+.margin-left--xlarge {
+  margin-left: $spacing-unit * 3;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-margin--top {
+  margin-top: 0;
+}
+
+.no-margin--right,
+.md-icon-button.no-margin--right {
+  margin-right: 0;
+}
+
+.no-margin--bottom {
+  margin-bottom: 0;
+}
+
+.no-margin--left {
+  margin-left: 0;
+}
+
+.large-letter-spacing {
+  letter-spacing: 3.6px;
+}

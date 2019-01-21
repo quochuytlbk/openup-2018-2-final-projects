@@ -1,0 +1,22 @@
+<md-toolbar class="organize-section__toolbar no-padding" ng-class="$ctrl.data.toolbarClass" md-scroll-shrink>
+  <div class="full-size" layout layout-align="start center">
+    <img class="no-margin--top margin-bottom--4px margin-left--xsmall size--16px" ng-src="{{ $ctrl.data.iconUrl }}" />
+    <span class="md-body-2 margin-bottom--4px margin-top--4px margin-left--small">{{ $ctrl.data.title }}</span>
+    <div flex></div>
+    <div>
+      <md-tooltip class="tooltip--two-lines" md-direction="top">
+        <div>{{ $ctrl.data.tooltip.header }}</div>
+        <div>{{ $ctrl.data.tooltip.description }}</div>
+      </md-tooltip>
+      <img
+        class="margin-top--4px margin-bottom--4px margin-right--xsmall clickable size--16px"
+        ng-src="{{ $ctrl.infoIconUrl }}"
+      />
+    </div>
+    <div
+      class="margin-left--xsmall margin-right--xsmall margin-top--4px margin-bottom--4px organize-section__toolbar__count-box"
+    >
+      <span class="md-body-1">{{ $ctrl.data.toDos.length }}</span>
+    </div>
+  </div>
+</md-toolbar>

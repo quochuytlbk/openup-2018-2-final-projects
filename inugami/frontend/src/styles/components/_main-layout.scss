@@ -1,0 +1,17 @@
+.sidebar__button {
+  background: #fafafa;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    background: #ffffff;
+  }
+
+  &.selected {
+    background: #ffffff;
+
+    img {
+      filter: invert(57%) sepia(77%) saturate(6131%) hue-rotate(215deg) brightness(94%) contrast(109%);
+    }
+  }
+}

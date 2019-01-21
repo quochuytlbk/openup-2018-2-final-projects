@@ -1,0 +1,12 @@
+<div class="full-height" layout="column">
+  <section layout="row" flex="">
+    <sidebar class="display-inherit full-height width--100px"></sidebar>
+
+    <md-content flex>
+      <md-toolbar md-scroll-shrink>
+        <div class="md-toolbar-tools" ui-view="appbar" appbar-data="$ctrl.appbarData"></div>
+      </md-toolbar>
+      <div ui-view="content" appbar-data="$ctrl.appbarData"></div>
+    </md-content>
+  </section>
+</div>

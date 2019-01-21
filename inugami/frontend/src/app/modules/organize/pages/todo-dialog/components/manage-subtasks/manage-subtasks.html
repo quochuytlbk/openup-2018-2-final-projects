@@ -1,0 +1,47 @@
+<h3>Subtasks</h3>
+<div class="margin-bottom--small" layout layout-align="start center" ng-repeat="subtask in $ctrl.toDo.subtasks">
+  <md-input-container class="no-margin">
+    <md-tooltip md-direction="top">{{ subtask.isCompleted ? 'Unmark completed' : 'Mark as completed' }}</md-tooltip>
+    <md-checkbox
+      class="no-margin"
+      name="mark"
+      ng-model="subtask.isCompleted"
+      ng-change="$ctrl.toggleSubtaskCompleted($index)"
+    ></md-checkbox>
+  </md-input-container>
+  <span ng-show="!subtask.isEditing" ng-dblclick="$ctrl.turnOnEditMode($index)">{{ subtask.name }}</span>
+  <md-input-container class="md-accent height--40px no-margin" md-no-float ng-show="subtask.isEditing">
+    <input
+      id="{{ $ctrl.toDo._id + '-subtask' + $index }}"
+      type="text"
+      placeholder="Subtask name"
+      ng-model="subtask.name"
+      ng-blur="$ctrl.turnOffEditMode($index)"
+    />
+  </md-input-container>
+  <div flex></div>
+  <div>
+    <md-button class="md-icon-button no-margin" ng-show="!subtask.isEditing" ng-click="$ctrl.turnOnEditMode($index)">
+      <md-icon md-font-set="material-icons">create</md-icon>
+    </md-button>
+    <md-button class="md-icon-button no-margin" ng-show="subtask.isEditing" ng-click="$ctrl.turnOffEditMode($index)">
+      <md-icon md-font-set="material-icons">clear</md-icon>
+    </md-button>
+    <md-button class="md-icon-button no-margin" ng-click="$ctrl.deleteSubtask($index)">
+      <md-icon md-font-set="material-icons">delete_sweep</md-icon>
+    </md-button>
+  </div>
+</div>
+<div class="margin-bottom--small" layout layout-align="start center">
+  <md-input-container class="no-margin--bottom md-accent" md-no-float flex>
+    <input
+      type="text"
+      ng-model="$ctrl.subtaskInput"
+      placeholder="Add subtask..."
+      ng-keypress="$ctrl.onPressEnter($event)"
+    />
+  </md-input-container>
+  <md-button class="md-fab md-mini" md-colors="{ background: 'default-accent' }" ng-click="$ctrl.onClickButton()">
+    <md-icon md-font-set="material-icons">add</md-icon>
+  </md-button>
+</div>

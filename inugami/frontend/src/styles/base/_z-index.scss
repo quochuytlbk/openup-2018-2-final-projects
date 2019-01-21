@@ -1,0 +1,28 @@
+$z-index: (
+  dialog: 200,
+  sidebar: 100,
+  appbar: 90,
+  footer: 80,
+  card: 10,
+  background: 0
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}
+
+.z-index--footer {
+  @include z-index(footer);
+}
+
+.z-index--999 {
+  z-index: 999;
+}
+
+.z-index--1000 {
+  z-index: 1000;
+}

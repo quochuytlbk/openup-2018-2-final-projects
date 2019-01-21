@@ -1,0 +1,52 @@
+<md-dialog aria-label="To-do Dialog">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-input-container class="no-margin">
+          <md-tooltip md-direction="top">{{ $ctrl.checkboxTooltip }}</md-tooltip>
+          <md-checkbox class="no-margin white" name="tos" ng-model="project.tos"></md-checkbox>
+        </md-input-container>
+        <h2>{{ toDo.name }}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()"> X </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-input-container>
+          <label>Category</label>
+          <md-icon md-font-set="material-icons">category</md-icon>
+          <md-select ng-model="$ctrl.toDo.category" name="category" required>
+            <md-option ng-repeat="category in $ctrl.categories" value="{{ category }}">
+              {{ category | capitalizeFirstLetter }}
+            </md-option>
+          </md-select>
+          <div ng-messages="addForm.category.$error" role="alert">
+            <div ng-message="required">To-do category is required.</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container class="md-input-container--with-hint">
+          <label>Objective</label>
+          <md-icon md-font-set="material-icons">track_changes</md-icon>
+          <md-select ng-model="$ctrl.toDo.objective" name="objective">
+            <md-option ng-if="$ctrl.objectives.length === 0" value="">
+              <span class="grey-text">No objective found</span>
+            </md-option>
+            <md-option ng-repeat="objective in $ctrl.objectives" value="{{ objective }}"> {{ objective }} </md-option>
+          </md-select>
+          <div class="hint" ng-if="$ctrl.objectives.length === 0">
+            Oops, looks like you don't have any objective.
+            <a class="btn-link--grey" ui-sref="main.track">Create one</a> now.
+          </div>
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button ng-click="answer('not useful')"> Not Useful </md-button>
+      <md-button ng-click="answer('useful')"> Useful </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

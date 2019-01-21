@@ -1,0 +1,36 @@
+<md-sidenav class="md-sidenav-left full-height" md-component-id="left" md-is-locked-open="true" md-whiteframe="4">
+  <md-content class="dark-background full-height" layout="column" layout-align="start center">
+    <img class="size--64px margin-top" ng-src="{{ $ctrl.logoUrl }}" />
+
+    <a
+      layout
+      class="size--56px margin-top sidebar__button"
+      ng-repeat="sidebarTopItem in $ctrl.sidebarTopItems"
+      ui-sref="{{ sidebarTopItem.stateName }}"
+      layout-align="center center"
+      ui-sref-active="selected"
+    >
+      <md-tooltip class="tooltip--two-lines" md-direction="right">
+        <div>{{ sidebarTopItem.name }}</div>
+        <div>{{ sidebarTopItem.description }}</div>
+      </md-tooltip>
+      <img class="size--36px" ng-src="{{ sidebarTopItem.icon }}" />
+    </a>
+
+    <md-divider flex></md-divider>
+
+    <a layout class="size--56px margin-top sidebar__button margin-bottom--small" layout-align="center center">
+      <md-menu layout layout-align="center center">
+        <img class="size--36px" ng-src="{{ $ctrl.settings.icon }}" ng-click="$ctrl.openMenu($mdMenu, $event)" />
+        <md-menu-content width="4">
+          <md-menu-item>
+            <md-button ng-click="$ctrl.logout($event)">
+              <md-icon md-font-set="material-icons">power_settings_new</md-icon>
+              Logout
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </a>
+  </md-content>
+</md-sidenav>

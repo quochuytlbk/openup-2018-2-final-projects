@@ -1,0 +1,29 @@
+@mixin btn-link {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@mixin btn-link--hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.btn-link--white {
+  @include btn-link();
+  color: #eeeeee;
+}
+
+a.btn-link--white:hover {
+  @include btn-link--hover();
+  color: #ffffff;
+}
+
+a.btn-link--grey {
+  @include btn-link();
+  color: grey;
+}
+
+a.btn-link--grey:hover {
+  @include btn-link--hover();
+  color: #545454;
+}

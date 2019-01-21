@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "Assets/*": ["assets/*"],
+      "Config/*": ["src/app/config/*"],
+      "Enums/*": ["src/app/enums/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,54 @@
+<form
+  name="loginForm"
+  ng-submit="loginForm.$valid && $ctrl.submitLoginForm(loginForm)"
+  class="margin-top margin-bottom--large full-width"
+  layout="column"
+  layout-margin
+  novalidate
+>
+  <md-input-container class="md-icon-float md-block margin-bottom">
+    <label>Email</label>
+    <md-icon md-font-set="material-icons">account_circle</md-icon>
+    <input
+      ng-model="$ctrl.userData.email"
+      ng-change="$ctrl.resetServerErrors(loginForm)"
+      type="email"
+      name="email"
+      required
+      autocomplete="username email"
+    />
+    <div ng-messages="loginForm.email.$error" role="alert">
+      <div ng-message="required">Email is required.</div>
+      <div ng-message="email">Invalid email format.</div>
+      <div ng-message="notFound">Email not found.</div>
+    </div>
+  </md-input-container>
+
+  <md-input-container class="md-icon-float md-block margin-bottom--small">
+    <label>Password</label>
+    <md-icon md-font-set="material-icons">lock</md-icon>
+    <input
+      ng-model="$ctrl.userData.password"
+      ng-change="$ctrl.resetServerErrors(loginForm)"
+      type="password"
+      name="password"
+      required
+      autocomplete="current-password"
+    />
+    <div ng-messages="loginForm.password.$error" role="alert">
+      <div ng-message="required">Password is required.</div>
+      <div ng-message="incorrect">Password incorrect.</div>
+    </div>
+  </md-input-container>
+
+  <div layout layout-align="space-between center">
+    <md-button class="md-raised md-primary" type="submit">Login</md-button>
+
+    <div>
+      <span class="md-body-2 action-color">Or login with</span>
+      <md-button class="no-padding no-margin md-icon-button" ng-click="$ctrl.loginWithGoogle()">
+        <md-icon md-svg-icon="{{ $ctrl.googleIconUrl }}"></md-icon>
+      </md-button>
+    </div>
+  </div>
+</form>

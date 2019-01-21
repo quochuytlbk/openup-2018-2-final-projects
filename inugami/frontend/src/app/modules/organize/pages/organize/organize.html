@@ -1,0 +1,12 @@
+<section class="full-height" layout="row" layout-wrap layout-padding>
+  <organize-section
+    flex="50"
+    ng-if="$ctrl.categories.length > 0"
+    ng-repeat="category in $ctrl.categories"
+    data="category"
+    reload="$ctrl.initializeToDos()"
+    appbar-data="$ctrl.appbarData"
+  ></organize-section>
+  <div class="full-size absolute-position top--0 left--0 no-padding full-screen-wolf-howling-background"></div>
+  <loading-screen ng-if="$ctrl.showLoadingScreen"></loading-screen>
+</section>

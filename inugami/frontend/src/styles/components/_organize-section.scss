@@ -1,0 +1,62 @@
+@import '../base/color';
+@import '../base/z-index';
+
+.organize-section__add-todo {
+  @include z-index(footer);
+}
+
+.organize-section__toolbar {
+  min-height: 32px;
+  height: 32px;
+}
+
+.organize-section__toolbar__count-box {
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.26);
+}
+
+.organize-section__text {
+  word-wrap: break-word;
+}
+
+.organize-section__card {
+  outline: none;
+
+  &:hover {
+    @include grey-background--light;
+  }
+
+  &.selected {
+    @include grey-background--light;
+  }
+}
+
+.full-screen-wolf-howling-background {
+  position: absolute;
+  background: url('~Assets/images/wolf-howling-background.svg') no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  @include z-index(background);
+}
+
+.overdue-deadline {
+  img {
+    filter: invert(57%) sepia(83%) saturate(5335%) hue-rotate(337deg) brightness(94%) contrast(105%);
+  }
+  span {
+    color: #f44336;
+  }
+}
+
+.near-deadline {
+  img {
+    filter: invert(75%) sepia(90%) saturate(1583%) hue-rotate(349deg) brightness(103%) contrast(108%);
+  }
+  span {
+    color: #ff8f00;
+  }
+}

@@ -1,0 +1,36 @@
+.toggle-selector {
+  > button {
+    min-width: 90px;
+    background-position: center;
+    background: transparent;
+    padding: 8px;
+    cursor: pointer;
+    color: white;
+    border: 1px solid white;
+
+    transition: background 0.8s;
+
+    &.selected {
+      background: white;
+      color: #3867fa;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:not(.selected) {
+      &:hover {
+        background: rgba(255, 255, 255, 0.15) radial-gradient(circle, transparent 1%, rgba(255, 255, 255, 0.1) 1%)
+          center/15000%;
+      }
+
+      &:active {
+        background-color: rgba(255, 255, 255, 0.1);
+        background-size: 100%;
+        transition: background 0s;
+      }
+    }
+  }
+}
